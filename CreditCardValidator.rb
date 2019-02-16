@@ -29,7 +29,13 @@ module CreditCardValidator
     self.number.reverse.split('').each_slice(2) do |a,b|
       (b2 = b.to_i*2) > 9 ? count += a.to_i+((b2)-9) : count += a.to_i+((b2))
     end
-    count%10 == 0 ? true :false
+    if count == 0
+      false
+    elsif count%10 == 0
+      true 
+    else
+      false
+    end
   end
-  
+
 end
