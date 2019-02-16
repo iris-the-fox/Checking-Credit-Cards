@@ -6,7 +6,7 @@ def get_card_number
   @card = CreditCard.new(card_number)
   if @card.card_is_valid?
   	puts "Your card is valid"
-  	puts @card.company
+  	puts "Your card company is #{@card.company}"
   else
   	puts "Your card is invalid. Try again"
   	get_card_number

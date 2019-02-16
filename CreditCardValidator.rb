@@ -16,12 +16,11 @@ module CreditCardValidator
 
     card_patterns.each do |pattern|
       if self.number.match?(pattern[:begins_with]) && pattern[:length].include?(self.number.length)
-        self.company = (pattern[:company])
+        return self.company = (pattern[:company])
       else
         self.company = 'Unknown'
       end
     end
-    self.company
   end
 
   def luhn_validated?
